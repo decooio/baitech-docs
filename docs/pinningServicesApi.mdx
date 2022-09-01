@@ -1,0 +1,32 @@
+---
+id: pinningServicesApi
+title: ''
+hide_table_of_contents: true
+---
+
+Baitech 的 **Crust Pinner** 其实是一个符合 [IPFS Pinning Services API Spec](https://ipfs.github.io/pinning-services-api-spec/) 标准的远端存储服务 API。您可以直接用 *ipfs pin remote* 命令访问 Baitech 远端存储服务。
+
+### 添加 Baitech 远端存储服务
+```sh
+ipfs pin remote service add baitech https://api.baitech/psa <YOUR_API_KEY>
+```
+
+### 上传文件
+```sh
+ipfs pin remote add --service=baitech --name=<FILE_NAME> <CID_TO_PIN>
+```
+
+### 查看成功存储的文件
+```sh
+ipfs pin remote ls --service=baitech
+```
+
+### 查看处理中或者存储失败的文件
+```sh
+ipfs pin remote ls --service=baitech --status=queued,pinning,failed
+```
+
+### 查看帮助信息
+```sh
+ipfs pin remote --help
+```

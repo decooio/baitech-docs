@@ -1,0 +1,46 @@
+---
+id: upload
+title: ''
+hide_table_of_contents: true
+---
+
+## URL
+```
+https://<gateway-host>/api/v0/add?pin=true
+```
+
+例如，通过 `https://gw1.baitech-ipfs.net` 这台 IPFS 网关上传文件或文件夹的 API URL 如下：
+```
+https://gw1.baitech-ipfs.net/api/v0/add?pin=true
+```
+
+## 描述
+
+通过选定的 IPFS 网关上传文件或文件夹，获取 CID。具体说明参考：
+
+https://docs.ipfs.tech/reference/kubo/rpc/#api-v0-add
+
+
+## 请求类型
+POST
+
+## Headers
+```
+"Authorization: Bearer": "<YOUR_API_KEY>"
+```
+
+## Curl 请求示例
+```sh
+curl -X POST 'https://gw1.baitech-ipfs.net/api/v0/add?pin=true' \
+--header 'Authorization: Bearer <YOUR_API_KEY>' \
+--form 'path=@"/Users/../../README.md"'
+```
+
+## API Response 示例
+```json
+{
+    "Name":"README.md",
+    "Hash":"QmeQRHBrBdCvqx41m58w5v9wcQo5A38FzRRTv7jS4WckMV",
+    "Size":"2087"
+}
+```

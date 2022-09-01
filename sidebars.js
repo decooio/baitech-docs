@@ -25,12 +25,6 @@ module.exports = {
    */
 
   mySidebar: [
-//     {
-//       type: 'doc',
-//       id: 'introduction',
-//       label: '介绍'
-//     },
-
     {
       type: 'category',
       label: '概览',
@@ -70,18 +64,18 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'pinning/gatewayList',
+          id: 'api/gatewayList',
           label: '获取网关列表'
         },
         {
           type: 'doc',
-          id: 'pinning/pinFile',
-          label: '上传文件'
+          id: 'api/upload',
+          label: '上传文件或文件夹 (Upload)'
         },
         {
           type: 'doc',
-          id: 'pinning/pinByHash',
-          label: '通过 CID 上传文件'
+          id: 'api/pin',
+          label: '存储 (Pin)'
         }
       ]
     },

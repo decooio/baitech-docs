@@ -1,0 +1,47 @@
+---
+id: pin
+title: ''
+hide_table_of_contents: true
+---
+
+## URL
+```
+https://api.baitech-ipfs.net/psa/pins
+```
+
+## 描述
+
+将文件在 Crust 网络下单，获取多个副本。提交的 Pin 请求会放入一个队列，由 Crust Pinner 按照先后顺序在 Crust 下单存储。
+
+## 请求类型
+POST
+
+## Headers
+```
+"Authorization: Bearer": "<YOUR_API_KEY>"
+```
+
+## Curl 请求示例
+```sh
+curl -X POST 'https://api.baitech-ipfs.net/psa/pins' \
+--header 'Authorization: Bearer <YOUR_API_KEY>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "cid": "QmeQRHBrBdCvqx41m58w5v9wcQo5A38FzRRTv7jS4WckMV",
+    "name": "README.md"
+}'
+```
+
+## API Response 示例
+```json
+"requestId": "15a85f7a-f6b4-4ccb-9cf0-376f41ad2be0-1659497098351",
+    "status": "queued",
+    "created": "2022-08-03T03:24:58+00:00",
+    "pin": {
+        "cid": "QmeQRHBrBdCvqx41m58w5v9wcQo5A38FzRRTv7jS4WckMV",
+        "name": "README.md",
+        "origins": []
+    },
+    "delegates": [],
+    "info": {}
+```
