@@ -1,11 +1,13 @@
-name: Prod Release to Github Pages
+name: Beta Release to Github Pages
 
 on:
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   build:
-    if: github.repository == 'baitech-ipfs/baitech-docs'
+    if: github.repository == 'decooio/baitech-docs'
     runs-on: ubuntu-latest
 
     steps:
