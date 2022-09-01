@@ -1,0 +1,51 @@
+---
+id: pinningServicesApi
+title: ''
+---
+
+Baitech 提供符合 [IPFS Pinning Services API Spec](https://ipfs.github.io/pinning-services-api-spec/) 标准的远端存储服务 API。
+
+:::note
+*远端存储服务 API* 部署在 Baitech Storage，其中的文件上传功能由 Baitech Storage 自动选择 Endpoint 完成。
+:::
+
+## URL
+
+https://api.decoo-cloud.cn/psa
+
+## 认证
+
+IPFS Pinning Services API Spec 使用 Bearer Token 的方式进行认证，您可以使用 Baitech 生成的 API Secret 来访问 Baitech 提供的远端存储服务API：
+
+```
+"Authorization": "Bearer <YOUR_API_KEY>"
+```
+
+## 在IPFS命令行里添加并使用Baitech
+
+您也可以直接用 *ipfs pin remote* 命令访问 Baitech 远端存储服务。
+
+添加 Baitech 远端存储服务：
+```sh
+ipfs pin remote service add baitech https://api.decoo-cloud.cn/psa <YOUR_API_KEY>
+```
+
+上传文件：
+```sh
+ipfs pin remote add --service=baitech --name=<FILE_NAME> <CID_TO_PIN>
+```
+
+查看成功存储的文件：
+```sh
+ipfs pin remote ls --service=baitech
+```
+
+查看处理中或者存储失败的文件：
+```sh
+ipfs pin remote ls --service=baitech --status=queued,pinning,failed
+```
+
+查看帮助信息：
+```sh
+ipfs pin remote --help
+```

@@ -1,0 +1,25 @@
+name: Prod Release to Github Pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: github.repository == 'baitech-ipfs/baitech-docs'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run install
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy Gh-Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          cname: beta-docs.baitech-ipfs.net

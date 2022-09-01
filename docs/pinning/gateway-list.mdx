@@ -1,0 +1,44 @@
+---
+id: gatewayList
+title: ''
+---
+
+## URL
+```
+https://api.baitech-ipfs.net/auth/gateway/list
+```
+
+## 描述
+
+获取可用的 IPFS 网关列表
+
+
+## 请求类型
+GET
+
+## Headers
+```
+"Authorization: Bearer": "<YOUR_API_KEY>"
+```
+
+## Curl 请求示例
+```sh
+curl -X GET "https://api.baitech-ipfs.net/gateway/list" \
+  -H "Authorization: Bearer <YOUR_API_KEY>" \
+  -H "Content-Type: application/json"
+```
+
+## API Response 示例
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "host": "https://gw1.baitech-ipfs.net",
+            "nodeType": 0,
+            "name": "gw1"
+        }
+    ]
+}
+```

@@ -1,0 +1,17 @@
+---
+id: pinningWithApi
+title: ''
+hide_table_of_contents: true
+---
+
+## 简介
+
+使用 Baitech 存储和访问文件，大概分为三个步骤：
+
+1. **上传（Upooad）**：调用 **IPFS 网关** 的 HTTP API，上传文件或文件夹，获取 CID
+2. **存储（Pin）**： 调用云端的 **Crust Pinner** 的 HTTP API，将上一步获取的 CID，在 Crust 网络下单存储，获取多个存储副本
+3. **下载（Retrieval）**：使用带有文件 CID 的 URL，通过 **IPFS 网关** 从 Crust 网络访问文件
+
+## API Key
+
+**IPFS 网关**、**Crust Pinner** 均采用 API Key 进行认证。用户在 Baitech 注册成功后，即自动生成 API Key。用户登录后可以在 *个人面板* -> *API* -> *API Key* 中查看。
