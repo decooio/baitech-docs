@@ -25,7 +25,13 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.DECOO_PAT }}
-
+          
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
@@ -33,4 +39,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/decooio/${{ fromJSON(steps.data-map.outputs.DATA_MAP)[github.ref] }}:latest
+          tags: ghcr.io/decooio/${{ fromJSON(steps.data-map.outputs.DATA_MAP)[github.ref] }}:latest, gavfu/${{ fromJSON(steps.data-map.outputs.DATA_MAP)[github.ref] }}:latest
