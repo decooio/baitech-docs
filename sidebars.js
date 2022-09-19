@@ -35,11 +35,11 @@ module.exports = {
           id: 'general/gettingStarted',
           label: '介绍'
         },
-        {
-          type: 'doc',
-          id: 'general/gadget',
-          label: '在首页体验 Baitech'
-        },
+        // {
+        //   type: 'doc',
+        //   id: 'general/gadget',
+        //   label: '在首页体验 Baitech'
+        // },
         {
           type: 'doc',
           id: 'general/architecture',

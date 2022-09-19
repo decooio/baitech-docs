@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Baitech Docs',
+  title: '百工链存-技术文档',
   tagline: '百工链存',
   url: 'https://docs.baitech-ipfs.net',
   baseUrl: '/',
